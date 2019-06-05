@@ -1,8 +1,9 @@
+import numpy as np
 import torch
 
 
 def activation(x):
-    """ Sigmoid activation function
+    """  Sigmoid activation function
 
         Arguments
         ---------
@@ -50,5 +51,20 @@ W2 = torch.randn(n_hidden, n_output)
 # and bias terms for hidden and output layers
 B1 = torch.randn((1, n_hidden))
 B2 = torch.randn((1, n_output))
-print(torch.mm(B1, W2))
-print(torch.mm(W1, B2))
+# Below is answer to solve.
+C1 = activation(torch.mm(features, W1) + B1)
+C2 = activation(torch.mm(C1, W2) + B2)
+# print(torch.mm(C1, C2.view(2, 1)))
+print(C2)
+
+# Exercise 3
+
+a = np.random.rand(4, 3)
+a
+b = torch.from_numpy(a)
+b
+b.numpy()
+# Multiply PyTorch Tensor by 2, in place
+b.mul_(2)
+# Numpy array matches new values from Tensor
+a
