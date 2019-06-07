@@ -54,7 +54,6 @@ B2 = torch.randn((1, n_output))
 # Below is answer to solve.
 C1 = activation(torch.mm(features, W1) + B1)
 C2 = activation(torch.mm(C1, W2) + B2)
-# print(torch.mm(C1, C2.view(2, 1)))
 print(C2)
 
 # Exercise 3
