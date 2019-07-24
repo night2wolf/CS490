@@ -1,0 +1,10 @@
+Assignment 2 Report
+Trevor Klinkenberg
+CS490
+
+    For this assignment I was tasked with creating a membership inference attack on a model that I had created.
+    For a successful membership inference attack to succeed it must be able to properly identify a member of the training set through inferences on a shadow model that is reflective of the model it is attacking. 
+    To create this method I first began with training my model that I would be attacking. This was a simple CNN based off the CIFAR-10 dataset. Once this model had been trained I created a similar shadow model that trained off the same data set. After the shadow model was trained I was able to use it’s output data to train my attacking model for use against the original model. 
+    I took the outputs from the shadow model’s training and test data set then appended the labels 0 and 1 to them to represent what was used to train the shadow model. The attacking model then subsequently used this data to train itself for developing patterns to make successful membership inference attacks. 
+    Once the attacking model was trained I then tested it against the actual model’s testing and training data to obtain successful membership attack results. 
+    Overall the attacking model was successful but had room for improvement. I believe that the model could have been more successful if the shadow model was more well trained, possibly overfit on its data so the attacker could develop better patterns. With tuning the hyperparameters a bit further and possibly creating a shadow model that was more reflective of the original model, I believe this could have created an effective strategy to creating a membership inference attack model. 
